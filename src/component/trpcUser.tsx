@@ -4,7 +4,7 @@
 import { trpc } from "@/trpc/client";
 
 const TrpcUser = () => {
-    const { data } = trpc.users.getUser.useQuery();
+    const [data] = trpc.users.getUser.useSuspenseQuery();
 
     return (
         <div className="text-center">
